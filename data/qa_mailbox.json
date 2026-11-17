@@ -1,0 +1,58 @@
+[
+  {
+    "id": "QA-Q49801",
+    "source_type": "qnet_qa_mailbox",
+    "column_name": "教研問答信箱",
+    "series_id": "Q49801-Q49810",
+    "question_id": "Q49801",
+    "published_at": "2026-11-11T15:00:00+08:00",
+    "question": "請問課堂上應如何理解匯豐(00005)這種高息銀行股，在科技股調整時相對抗跌的現象？這是否等於建議增持？",
+    "answer": "【教學模擬答問，並非投資建議】不可以把「相對抗跌」理解為買賣建議。在本模擬數據裏，週四、週五科技指數跌幅大於恒指，匯豐(00005)及部分高息相關股份跌幅較細，只說明當日資金偏好不同，並不能推論未來表現，更不是建議增持或減持。\n\n課堂正確做法是：引用當日通訊稿與延時報價，說明板塊分化，並在答案中清楚標示資料截至時間、delay_minutes=15，以及 is_mock=true。in_passing_scope=false。",
+    "related_tickers": "[\"00005\", \"03466\"]",
+    "language": "zh-Hant",
+    "in_passing_scope": 0,
+    "is_mock": 1
+  },
+  {
+    "id": "QA-Q49802",
+    "source_type": "qnet_qa_mailbox",
+    "column_name": "教研問答信箱",
+    "series_id": "Q49801-Q49810",
+    "question_id": "Q49802",
+    "published_at": "2026-11-11T15:00:00+08:00",
+    "question": "通訊稿常常在同一則提到騰訊(00700)、阿里巴巴(09988)和指數，新聞代理應怎樣處理？",
+    "answer": "【教學模擬答問，並非投資建議】原始通訊稿必須保留，不要只存拆條後的版本。正確流程是：先讀取原始多股票電訊，再按代碼拆成 news_by_stock，然後過濾、去重及排序，每條摘要都要能回溯到原始稿的編號與時間。本模擬庫已提供 /v1/news/{id}/split 作為參考實作，並不是取代原始饋送。in_passing_scope=false。",
+    "related_tickers": "[\"00700\", \"09988\"]",
+    "language": "zh-Hant",
+    "in_passing_scope": 0,
+    "is_mock": 1
+  },
+  {
+    "id": "QA-Q49803",
+    "source_type": "qnet_qa_mailbox",
+    "column_name": "教研問答信箱",
+    "series_id": "Q49801-Q49810",
+    "question_id": "Q49803",
+    "published_at": "2026-11-12T15:00:00+08:00",
+    "question": "中芯國際(00981)週中傳出利用率偏高、其後股價又隨科技股回撤，應相信哪一個來源？",
+    "answer": "【教學模擬答問，並非投資建議】傳聞與價格走勢都要標示來源。週三通訊稿出現有關成熟製程利用率的市場傳述，週四、週五價格回撤則同時見於通訊稿和延時報價。RAG 答案應並列兩類證據，並註明傳聞未經公司確認，不可把專欄或信箱文字寫成事實。本信箱不在及格範圍內（in_passing_scope=false），只供識別來源類型。",
+    "related_tickers": "[\"00981\"]",
+    "language": "zh-Hant",
+    "in_passing_scope": 0,
+    "is_mock": 1
+  },
+  {
+    "id": "QA-Q49804",
+    "source_type": "qnet_qa_mailbox",
+    "column_name": "教研問答信箱",
+    "series_id": "Q49801-Q49810",
+    "question_id": "Q49804",
+    "published_at": "2026-11-12T15:00:00+08:00",
+    "question": "港鐵(00066)可否當作長線收息例子來寫進聊天機械人的回答？",
+    "answer": "【教學模擬答問，並非投資建議】聊天機械人可以引用公司簡介中的業務描述和模擬派息欄位，說明「這是一間鐵路及相關物業業務的上市公司」，但不可輸出「適合長線收息」或「可以買入」一類建議。所有答案都須加上「非投資建議、資料為模擬」的聲明。in_passing_scope=false。",
+    "related_tickers": "[\"00066\"]",
+    "language": "zh-Hant",
+    "in_passing_scope": 0,
+    "is_mock": 1
+  }
+]

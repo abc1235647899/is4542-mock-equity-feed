@@ -1,0 +1,68 @@
+[
+  {
+    "code": "HSI",
+    "name_zh": "恒生指數",
+    "name_en": "Hang Seng Index",
+    "last": 23680.5,
+    "change_value": -369.5,
+    "change_pct": -1.5364,
+    "as_of": "2026-11-13T15:12:00+08:00",
+    "delay_minutes": 15,
+    "is_mock": 1
+  },
+  {
+    "code": "HSTECH",
+    "name_zh": "科技指數",
+    "name_en": "Hang Seng TECH Index",
+    "last": 3825.5,
+    "change_value": -117.5,
+    "change_pct": -2.98,
+    "as_of": "2026-11-13T15:12:00+08:00",
+    "delay_minutes": 15,
+    "is_mock": 1
+  },
+  {
+    "code": "HSCEI",
+    "name_zh": "國企指數",
+    "name_en": "Hang Seng China Enterprises Index",
+    "last": 7952.5,
+    "change_value": -118.0,
+    "change_pct": -1.4621,
+    "as_of": "2026-11-13T15:12:00+08:00",
+    "delay_minutes": 15,
+    "is_mock": 1
+  },
+  {
+    "code": "HSCCI",
+    "name_zh": "紅籌指數",
+    "name_en": "Hang Seng China-Affiliated Corporations Index",
+    "last": 3926.0,
+    "change_value": -60.0,
+    "change_pct": -1.5053,
+    "as_of": "2026-11-13T15:12:00+08:00",
+    "delay_minutes": 15,
+    "is_mock": 1
+  },
+  {
+    "code": "HSI_F1",
+    "name_zh": "恒指期貨(即月)",
+    "name_en": "HSI Futures (Front Month)",
+    "last": 23662.0,
+    "change_value": -366.0,
+    "change_pct": -1.5232,
+    "as_of": "2026-11-13T15:12:00+08:00",
+    "delay_minutes": 15,
+    "is_mock": 1
+  },
+  {
+    "code": "HSI_F2",
+    "name_zh": "恒指期貨(下月)",
+    "name_en": "HSI Futures (Next Month)",
+    "last": 23655.0,
+    "change_value": -357.0,
+    "change_pct": -1.4868,
+    "as_of": "2026-11-13T15:12:00+08:00",
+    "delay_minutes": 15,
+    "is_mock": 1
+  }
+]

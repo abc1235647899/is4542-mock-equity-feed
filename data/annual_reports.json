@@ -1,0 +1,322 @@
+[
+  {
+    "id": "AR-00700-2024",
+    "ticker": "00700",
+    "year": 2024,
+    "title": "Tencent (00700) 2024 Annual Report (MOCK placeholder)",
+    "company_name": "Tencent / 騰訊控股",
+    "abstract": "MOCK one-page placeholder for the 2024 annual report of 騰訊控股 (00700). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-00700-2024.pdf",
+    "is_mock": 1
+  },
+  {
+    "id": "AR-00700-2025",
+    "ticker": "00700",
+    "year": 2025,
+    "title": "Tencent (00700) 2025 Annual Report (MOCK placeholder)",
+    "company_name": "Tencent / 騰訊控股",
+    "abstract": "MOCK one-page placeholder for the 2025 annual report of 騰訊控股 (00700). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-00700-2025.pdf",
+    "is_mock": 1
+  },
+  {
+    "id": "AR-09988-2024",
+    "ticker": "09988",
+    "year": 2024,
+    "title": "Alibaba - W (09988) 2024 Annual Report (MOCK placeholder)",
+    "company_name": "Alibaba - W / 阿里巴巴 - W",
+    "abstract": "MOCK one-page placeholder for the 2024 annual report of 阿里巴巴 - W (09988). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-09988-2024.pdf",
+    "is_mock": 1
+  },
+  {
+    "id": "AR-09988-2025",
+    "ticker": "09988",
+    "year": 2025,
+    "title": "Alibaba - W (09988) 2025 Annual Report (MOCK placeholder)",
+    "company_name": "Alibaba - W / 阿里巴巴 - W",
+    "abstract": "MOCK one-page placeholder for the 2025 annual report of 阿里巴巴 - W (09988). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-09988-2025.pdf",
+    "is_mock": 1
+  },
+  {
+    "id": "AR-00005-2024",
+    "ticker": "00005",
+    "year": 2024,
+    "title": "HSBC Holdings (00005) 2024 Annual Report (MOCK placeholder)",
+    "company_name": "HSBC Holdings / 匯豐控股",
+    "abstract": "MOCK one-page placeholder for the 2024 annual report of 匯豐控股 (00005). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-00005-2024.pdf",
+    "is_mock": 1
+  },
+  {
+    "id": "AR-00005-2025",
+    "ticker": "00005",
+    "year": 2025,
+    "title": "HSBC Holdings (00005) 2025 Annual Report (MOCK placeholder)",
+    "company_name": "HSBC Holdings / 匯豐控股",
+    "abstract": "MOCK one-page placeholder for the 2025 annual report of 匯豐控股 (00005). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-00005-2025.pdf",
+    "is_mock": 1
+  },
+  {
+    "id": "AR-00066-2024",
+    "ticker": "00066",
+    "year": 2024,
+    "title": "MTR Corporation (00066) 2024 Annual Report (MOCK placeholder)",
+    "company_name": "MTR Corporation / 港鐵公司",
+    "abstract": "MOCK one-page placeholder for the 2024 annual report of 港鐵公司 (00066). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-00066-2024.pdf",
+    "is_mock": 1
+  },
+  {
+    "id": "AR-00066-2025",
+    "ticker": "00066",
+    "year": 2025,
+    "title": "MTR Corporation (00066) 2025 Annual Report (MOCK placeholder)",
+    "company_name": "MTR Corporation / 港鐵公司",
+    "abstract": "MOCK one-page placeholder for the 2025 annual report of 港鐵公司 (00066). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-00066-2025.pdf",
+    "is_mock": 1
+  },
+  {
+    "id": "AR-00981-2024",
+    "ticker": "00981",
+    "year": 2024,
+    "title": "SMIC (00981) 2024 Annual Report (MOCK placeholder)",
+    "company_name": "SMIC / 中芯國際",
+    "abstract": "MOCK one-page placeholder for the 2024 annual report of 中芯國際 (00981). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-00981-2024.pdf",
+    "is_mock": 1
+  },
+  {
+    "id": "AR-00981-2025",
+    "ticker": "00981",
+    "year": 2025,
+    "title": "SMIC (00981) 2025 Annual Report (MOCK placeholder)",
+    "company_name": "SMIC / 中芯國際",
+    "abstract": "MOCK one-page placeholder for the 2025 annual report of 中芯國際 (00981). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-00981-2025.pdf",
+    "is_mock": 1
+  },
+  {
+    "id": "AR-03690-2024",
+    "ticker": "03690",
+    "year": 2024,
+    "title": "Meituan - W (03690) 2024 Annual Report (MOCK placeholder)",
+    "company_name": "Meituan - W / 美團 - W",
+    "abstract": "MOCK one-page placeholder for the 2024 annual report of 美團 - W (03690). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-03690-2024.pdf",
+    "is_mock": 1
+  },
+  {
+    "id": "AR-03690-2025",
+    "ticker": "03690",
+    "year": 2025,
+    "title": "Meituan - W (03690) 2025 Annual Report (MOCK placeholder)",
+    "company_name": "Meituan - W / 美團 - W",
+    "abstract": "MOCK one-page placeholder for the 2025 annual report of 美團 - W (03690). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-03690-2025.pdf",
+    "is_mock": 1
+  },
+  {
+    "id": "AR-00016-2024",
+    "ticker": "00016",
+    "year": 2024,
+    "title": "SHK Properties (00016) 2024 Annual Report (MOCK placeholder)",
+    "company_name": "SHK Properties / 新鴻基地產",
+    "abstract": "MOCK one-page placeholder for the 2024 annual report of 新鴻基地產 (00016). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-00016-2024.pdf",
+    "is_mock": 1
+  },
+  {
+    "id": "AR-00016-2025",
+    "ticker": "00016",
+    "year": 2025,
+    "title": "SHK Properties (00016) 2025 Annual Report (MOCK placeholder)",
+    "company_name": "SHK Properties / 新鴻基地產",
+    "abstract": "MOCK one-page placeholder for the 2025 annual report of 新鴻基地產 (00016). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-00016-2025.pdf",
+    "is_mock": 1
+  },
+  {
+    "id": "AR-00941-2024",
+    "ticker": "00941",
+    "year": 2024,
+    "title": "China Mobile (00941) 2024 Annual Report (MOCK placeholder)",
+    "company_name": "China Mobile / 中國移動",
+    "abstract": "MOCK one-page placeholder for the 2024 annual report of 中國移動 (00941). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-00941-2024.pdf",
+    "is_mock": 1
+  },
+  {
+    "id": "AR-00941-2025",
+    "ticker": "00941",
+    "year": 2025,
+    "title": "China Mobile (00941) 2025 Annual Report (MOCK placeholder)",
+    "company_name": "China Mobile / 中國移動",
+    "abstract": "MOCK one-page placeholder for the 2025 annual report of 中國移動 (00941). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-00941-2025.pdf",
+    "is_mock": 1
+  },
+  {
+    "id": "AR-01299-2024",
+    "ticker": "01299",
+    "year": 2024,
+    "title": "AIA Group (01299) 2024 Annual Report (MOCK placeholder)",
+    "company_name": "AIA Group / 友邦保險",
+    "abstract": "MOCK one-page placeholder for the 2024 annual report of 友邦保險 (01299). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-01299-2024.pdf",
+    "is_mock": 1
+  },
+  {
+    "id": "AR-01299-2025",
+    "ticker": "01299",
+    "year": 2025,
+    "title": "AIA Group (01299) 2025 Annual Report (MOCK placeholder)",
+    "company_name": "AIA Group / 友邦保險",
+    "abstract": "MOCK one-page placeholder for the 2025 annual report of 友邦保險 (01299). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-01299-2025.pdf",
+    "is_mock": 1
+  },
+  {
+    "id": "AR-01810-2024",
+    "ticker": "01810",
+    "year": 2024,
+    "title": "Xiaomi - W (01810) 2024 Annual Report (MOCK placeholder)",
+    "company_name": "Xiaomi - W / 小米集團 - W",
+    "abstract": "MOCK one-page placeholder for the 2024 annual report of 小米集團 - W (01810). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-01810-2024.pdf",
+    "is_mock": 1
+  },
+  {
+    "id": "AR-01810-2025",
+    "ticker": "01810",
+    "year": 2025,
+    "title": "Xiaomi - W (01810) 2025 Annual Report (MOCK placeholder)",
+    "company_name": "Xiaomi - W / 小米集團 - W",
+    "abstract": "MOCK one-page placeholder for the 2025 annual report of 小米集團 - W (01810). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-01810-2025.pdf",
+    "is_mock": 1
+  },
+  {
+    "id": "AR-02318-2024",
+    "ticker": "02318",
+    "year": 2024,
+    "title": "Ping An (02318) 2024 Annual Report (MOCK placeholder)",
+    "company_name": "Ping An / 中國平安",
+    "abstract": "MOCK one-page placeholder for the 2024 annual report of 中國平安 (02318). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-02318-2024.pdf",
+    "is_mock": 1
+  },
+  {
+    "id": "AR-02318-2025",
+    "ticker": "02318",
+    "year": 2025,
+    "title": "Ping An (02318) 2025 Annual Report (MOCK placeholder)",
+    "company_name": "Ping An / 中國平安",
+    "abstract": "MOCK one-page placeholder for the 2025 annual report of 中國平安 (02318). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-02318-2025.pdf",
+    "is_mock": 1
+  },
+  {
+    "id": "AR-00883-2024",
+    "ticker": "00883",
+    "year": 2024,
+    "title": "CNOOC (00883) 2024 Annual Report (MOCK placeholder)",
+    "company_name": "CNOOC / 中國海洋石油",
+    "abstract": "MOCK one-page placeholder for the 2024 annual report of 中國海洋石油 (00883). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-00883-2024.pdf",
+    "is_mock": 1
+  },
+  {
+    "id": "AR-00883-2025",
+    "ticker": "00883",
+    "year": 2025,
+    "title": "CNOOC (00883) 2025 Annual Report (MOCK placeholder)",
+    "company_name": "CNOOC / 中國海洋石油",
+    "abstract": "MOCK one-page placeholder for the 2025 annual report of 中國海洋石油 (00883). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-00883-2025.pdf",
+    "is_mock": 1
+  },
+  {
+    "id": "AR-00388-2024",
+    "ticker": "00388",
+    "year": 2024,
+    "title": "HKEX (00388) 2024 Annual Report (MOCK placeholder)",
+    "company_name": "HKEX / 香港交易所",
+    "abstract": "MOCK one-page placeholder for the 2024 annual report of 香港交易所 (00388). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-00388-2024.pdf",
+    "is_mock": 1
+  },
+  {
+    "id": "AR-00388-2025",
+    "ticker": "00388",
+    "year": 2025,
+    "title": "HKEX (00388) 2025 Annual Report (MOCK placeholder)",
+    "company_name": "HKEX / 香港交易所",
+    "abstract": "MOCK one-page placeholder for the 2025 annual report of 香港交易所 (00388). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-00388-2025.pdf",
+    "is_mock": 1
+  },
+  {
+    "id": "AR-00011-2024",
+    "ticker": "00011",
+    "year": 2024,
+    "title": "Hang Seng Bank (00011) 2024 Annual Report (MOCK placeholder)",
+    "company_name": "Hang Seng Bank / 恒生銀行",
+    "abstract": "MOCK one-page placeholder for the 2024 annual report of 恒生銀行 (00011). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-00011-2024.pdf",
+    "is_mock": 1
+  },
+  {
+    "id": "AR-00011-2025",
+    "ticker": "00011",
+    "year": 2025,
+    "title": "Hang Seng Bank (00011) 2025 Annual Report (MOCK placeholder)",
+    "company_name": "Hang Seng Bank / 恒生銀行",
+    "abstract": "MOCK one-page placeholder for the 2025 annual report of 恒生銀行 (00011). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-00011-2025.pdf",
+    "is_mock": 1
+  },
+  {
+    "id": "AR-01024-2024",
+    "ticker": "01024",
+    "year": 2024,
+    "title": "Kuaishou - W (01024) 2024 Annual Report (MOCK placeholder)",
+    "company_name": "Kuaishou - W / 快手 - W",
+    "abstract": "MOCK one-page placeholder for the 2024 annual report of 快手 - W (01024). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-01024-2024.pdf",
+    "is_mock": 1
+  },
+  {
+    "id": "AR-01024-2025",
+    "ticker": "01024",
+    "year": 2025,
+    "title": "Kuaishou - W (01024) 2025 Annual Report (MOCK placeholder)",
+    "company_name": "Kuaishou - W / 快手 - W",
+    "abstract": "MOCK one-page placeholder for the 2025 annual report of 快手 - W (01024). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-01024-2025.pdf",
+    "is_mock": 1
+  },
+  {
+    "id": "AR-03466-2024",
+    "ticker": "03466",
+    "year": 2024,
+    "title": "Hang Seng High Div (03466) 2024 Annual Report (MOCK placeholder)",
+    "company_name": "Hang Seng High Div / 恒生高息股",
+    "abstract": "MOCK one-page placeholder for the 2024 annual report of 恒生高息股 (03466). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-03466-2024.pdf",
+    "is_mock": 1
+  },
+  {
+    "id": "AR-03466-2025",
+    "ticker": "03466",
+    "year": 2025,
+    "title": "Hang Seng High Div (03466) 2025 Annual Report (MOCK placeholder)",
+    "company_name": "Hang Seng High Div / 恒生高息股",
+    "abstract": "MOCK one-page placeholder for the 2025 annual report of 恒生高息股 (03466). Full report text is not ingested into the RAG corpus in this trial. This is not a real filing and not investment advice.",
+    "file_path": "data/pdfs/AR-03466-2025.pdf",
+    "is_mock": 1
+  }
+]

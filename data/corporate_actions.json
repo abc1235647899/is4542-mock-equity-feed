@@ -1,0 +1,56 @@
+[
+  {
+    "ticker": "01810",
+    "ex_date": "2025-06-20",
+    "action_type": "split",
+    "factor": 0.5,
+    "amount_hkd": null,
+    "description": "MOCK educational 2-for-1 share subdivision. Historical prices in ohlc_daily are already adjusted.",
+    "is_mock": 1
+  },
+  {
+    "ticker": "09988",
+    "ex_date": "2026-03-18",
+    "action_type": "dividend",
+    "factor": null,
+    "amount_hkd": 0.95,
+    "description": "MOCK educational cash dividend of HKD 0.95 per share (special). For schema illustration.",
+    "is_mock": 1
+  },
+  {
+    "ticker": "00005",
+    "ex_date": "2026-08-14",
+    "action_type": "dividend",
+    "factor": null,
+    "amount_hkd": 0.51,
+    "description": "MOCK educational interim cash dividend of HKD 0.51 per share.",
+    "is_mock": 1
+  },
+  {
+    "ticker": "00016",
+    "ex_date": "2026-03-11",
+    "action_type": "dividend",
+    "factor": null,
+    "amount_hkd": 1.65,
+    "description": "MOCK educational final cash dividend of HKD 1.65 per share.",
+    "is_mock": 1
+  },
+  {
+    "ticker": "00700",
+    "ex_date": "2026-05-21",
+    "action_type": "dividend",
+    "factor": null,
+    "amount_hkd": 3.4,
+    "description": "MOCK educational final cash dividend of HKD 3.40 per share.",
+    "is_mock": 1
+  },
+  {
+    "ticker": "00941",
+    "ex_date": "2026-06-12",
+    "action_type": "dividend",
+    "factor": null,
+    "amount_hkd": 2.55,
+    "description": "MOCK educational final cash dividend of HKD 2.55 per share.",
+    "is_mock": 1
+  }
+]

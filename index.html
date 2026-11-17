@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IS4542 Mock Equity Feed · 模擬教學數據</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="description" content="Synthetic teaching data for CityU IS4542. Mock only. Not investment advice. Not a Quam or HKEx product." />
+  <style>
+    :root {
+      --navy: #1B2A4A;
+      --navy-2: #24365e;
+      --burg: #7A1F2B;
+      --gold: #B8860B;
+      --paper: #F6F3EC;
+      --line: #D9D3C7;
+      --ink: #1A1A1A;
+      --muted: #5C6570;
+      --up: #0B6E4F;
+      --down: #B42318;
+      --card: #FFFFFF;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Source Sans 3", "Noto Sans TC", "Segoe UI", sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.45;
+    }
+    header {
+      background: var(--navy);
+      color: #fff;
+      padding: 16px 24px 14px;
+    }
+    header .kicker {
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      opacity: .8;
+    }
+    header h1 {
+      margin: 4px 0 8px;
+      font-size: 22px;
+      font-weight: 700;
+    }
+    .badges { display: flex; flex-wrap: wrap; gap: 8px; }
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 650;
+      background: var(--burg);
+      color: #fff;
+    }
+    .badge.gold { background: var(--gold); color: #1A1A1A; }
+    .badge.outline { background: transparent; border: 1px solid rgba(255,255,255,.45); }
+    nav {
+      background: var(--navy-2);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      padding: 8px 16px;
+    }
+    nav button {
+      background: transparent;
+      border: 0;
+      color: #E6EAF2;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font: inherit;
+    }
+    nav button[aria-current="page"] { background: #fff; color: var(--navy); font-weight: 700; }
+    main { max-width: 1100px; margin: 0 auto; padding: 20px 16px 64px; }
+    .panel { display: none; }
+    .panel.active { display: block; }
+    .toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 14px; }
+    select, input[type="search"] {
+      font: inherit;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      min-width: 200px;
+    }
+    table { width: 100%; border-collapse: collapse; background: var(--card); font-size: 14px; }
+    th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: left; white-space: nowrap; }
+    th { font-size: 12px; color: var(--muted); font-weight: 650; background: #EFEBE3; }
+    tr.clickable { cursor: pointer; }
+    tr.clickable:hover { background: #F3F0E8; }
+    .up { color: var(--up); font-weight: 650; }
+    .down { color: var(--down); font-weight: 650; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 14px;
+    }
+    .quote-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .metric { background: #F7F4EE; border-radius: 8px; padding: 8px 10px; }
+    .metric b { display: block; font-size: 11px; color: var(--muted); font-weight: 650; }
+    .price { font-size: 32px; font-weight: 750; margin: 0 8px 0 0; }
+    .news-item { padding-bottom: 12px; margin-bottom: 12px; border-bottom: 1px solid var(--line); }
+    .news-item h3 { margin: 0 0 4px; font-size: 16px; }
+    .meta { font-size: 12px; color: var(--muted); }
+    .tag {
+      display: inline-block;
+      background: #E8EEF7;
+      color: var(--navy);
+      border-radius: 4px;
+      padding: 1px 6px;
+      font-size: 11px;
+      margin-right: 4px;
+    }
+    .tag.warn { background: #F8E8C8; }
+    .tag.out { background: #F3E2E4; color: var(--burg); }
+    canvas { width: 100%; height: 180px; display: block; }
+    footer {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 16px 32px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .split { display: grid; grid-template-columns: 1.2fr .8fr; gap: 16px; }
+    @media (max-width: 800px) { .split { grid-template-columns: 1fr; } }
+    .cite { font-size: 12px; color: var(--muted); margin-top: 6px; }
+    .empty { color: var(--muted); padding: 20px 0; }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="kicker">City University of Hong Kong · IS4542 AI Agents · Semester B 2026/27</div>
+    <h1>Mock Equity Feed · 模擬股票數據饋送</h1>
+    <div class="badges">
+      <span class="badge">MOCK · 模擬教學數據</span>
+      <span class="badge gold">延時 15 分鐘</span>
+      <span class="badge outline">Not investment advice · 並非投資建議</span>
+      <span class="badge outline" id="asof-badge">as-of …</span>
+    </div>
+  </header>
+  <nav id="nav">
+    <button data-panel="watchlist" aria-current="page">Watchlist · 觀察名單</button>
+    <button data-panel="quote">Quote card · 報價</button>
+    <button data-panel="news">News · 新聞</button>
+    <button data-panel="iis">IIS · 披露易</button>
+    <button data-panel="profiles">Profiles · 公司資料</button>
+    <button data-panel="search">RAG search · 檢索</button>
+  </nav>
+  <main>
+    <section id="watchlist" class="panel active">
+      <div class="toolbar">
+        <label>Watchlist
+          <select id="watch-select"></select>
+        </label>
+        <span class="meta" id="watch-note"></span>
+      </div>
+      <div class="card" style="padding:0; overflow:auto;">
+        <table id="watch-table">
+          <thead>
+            <tr>
+              <th>代號名稱</th><th>現價</th><th>最高</th><th>最低</th>
+              <th>升跌</th><th>升跌幅(%)</th><th>成交額</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="quote" class="panel">
+      <div class="toolbar">
+        <label>Ticker
+          <select id="quote-select"></select>
+        </label>
+      </div>
+      <div class="card" id="quote-card"></div>
+    </section>
+
+    <section id="news" class="panel">
+      <div class="toolbar">
+        <input type="search" id="news-filter" placeholder="Filter by ticker or keyword · 代號或關鍵字" />
+        <span class="meta" id="news-count"></span>
+      </div>
+      <div id="news-list"></div>
+    </section>
+
+    <section id="iis" class="panel">
+      <div class="toolbar">
+        <label>Ticker
+          <select id="iis-select"><option value="">All · 全部</option></select>
+        </label>
+        <span class="meta" id="iis-count"></span>
+      </div>
+      <div id="iis-list"></div>
+    </section>
+
+    <section id="profiles" class="panel">
+      <div class="toolbar">
+        <label>Company
+          <select id="profile-select"></select>
+        </label>
+      </div>
+      <div class="card" id="profile-card"></div>
+    </section>
+
+    <section id="search" class="panel">
+      <div class="toolbar">
+        <input type="search" id="rag-q" placeholder="Ask or search the mock news and filings · 搜尋模擬新聞及公告" style="min-width:min(100%,420px)" />
+        <button id="rag-go" style="padding:8px 14px;border:0;border-radius:6px;background:var(--navy);color:#fff;cursor:pointer;font:inherit;">Search</button>
+      </div>
+      <p class="meta">Client-side keyword search over the mock news, IIS headlines and profiles, with source citations. This is not a live model and not investment advice.</p>
+      <div id="rag-out"></div>
+    </section>
+  </main>
+  <footer>
+    Synthetic educational data only (<code>is_mock=true</code>). Prices are 15-minute delayed teaching figures, not real-time HKEx OMDC. Text is original mock copy, not scraped from Quamnet, Infocast, AA Stocks, Bloomberg or HKEx. This page is not a Quam, Quamnet or Hong Kong Exchanges product. Figures such as PE, PB and EPS are stylised for class use. History here is about two years, not 25.
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

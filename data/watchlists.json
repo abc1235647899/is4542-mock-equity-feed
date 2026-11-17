@@ -1,0 +1,51 @@
+[
+  {
+    "id": "class_universe",
+    "name": "Class universe",
+    "name_zh": "課堂成分股",
+    "description": "Full ~16-name teaching universe for the IS4542 trial.",
+    "tickers": [
+      "00700",
+      "09988",
+      "00005",
+      "00066",
+      "00981",
+      "03690",
+      "00016",
+      "00941",
+      "01299",
+      "01810",
+      "02318",
+      "00883",
+      "00388",
+      "00011",
+      "01024",
+      "03466"
+    ]
+  },
+  {
+    "id": "demo_short",
+    "name": "Demo short list",
+    "name_zh": "示範短名單",
+    "description": "A compact 3-name list in the spirit of the deck watchlist screenshot (MOCK).",
+    "tickers": [
+      "00700",
+      "03466",
+      "00005"
+    ]
+  },
+  {
+    "id": "tech_watch",
+    "name": "Tech watch",
+    "name_zh": "科技觀察名單",
+    "description": "Internet, hardware and semiconductor names for news-agent filtering practice.",
+    "tickers": [
+      "00700",
+      "09988",
+      "03690",
+      "01810",
+      "00981",
+      "01024"
+    ]
+  }
+]

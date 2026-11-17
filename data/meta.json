@@ -1,0 +1,19 @@
+{
+  "feed_name": "is4542-mock-equity-feed",
+  "course": "IS4542",
+  "semester": "Sem B 2026/27",
+  "as_of": "2026-11-13T15:12:00+08:00",
+  "as_of_date": "2026-11-13",
+  "delay_minutes": "15",
+  "delay_badge": "延時15分鐘",
+  "is_mock": "true",
+  "seed": "4542",
+  "history_start": "2024-11-13",
+  "history_note": "Daily OHLC covers ~2 years ending on the as-of date. The schema is ready to extend toward ~25 years of corporate-action-adjusted history.",
+  "asof_session_note": "Daily OHLC on the as-of date is the session-so-far snapshot consistent with the 15-minute delayed quote (last complete bar 14:45-15:00 HKT), not a final official close.",
+  "disclaimer_en": "MOCK educational data for CityU IS4542 (AI Agents, Sem B 2026/27). This is not a live market feed, not real vendor content, and not investment advice. Every record is flagged is_mock=true. Quotes are 15-minute delayed (delay_minutes=15), not real-time HKEx OMDC. Do not use for trading.",
+  "disclaimer_zh": "此為香港城市大學 IS4542（AI Agents，2026/27 學年 Sem B）教學用模擬數據。並非即時行情、並非真實供應商內容，亦非投資建議。每條記錄均標示 is_mock=true。報價為延時15分鐘（delay_minutes=15），並非港交所 OMDC 即時數據。請勿用作買賣依據。",
+  "not_investment_advice": "true",
+  "not_omdc": "true",
+  "not_live": "true"
+}
