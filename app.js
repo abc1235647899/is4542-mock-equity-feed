@@ -1,4 +1,6 @@
 const DATA = {};
+const PUBLISHED = {};
+let usingGenerated = false;
 const $ = (id) => document.getElementById(id);
 
 const files = {
@@ -333,6 +335,71 @@ function searchRag() {
   `).join("") || `<p class="empty">No matches in the mock corpus.</p>`);
 }
 
+function asOfLabel(meta) {
+  const raw = (meta && (meta.as_of || meta.as_of_date)) || "";
+  if (raw.includes("T")) return `as-of ${raw.replace("T", " ").replace("+08:00", " HKT")}`;
+  return `as-of ${raw}`;
+}
+
+function renderAll() {
+  renderWatch();
+  renderQuote();
+  renderNews();
+  renderIis();
+  renderProfile();
+  renderLater();
+}
+
+function updateChrome() {
+  $("asof-badge").textContent = asOfLabel(DATA.meta);
+  const local = $("local-badge");
+  const restore = $("btn-restore");
+  const status = $("feed-status");
+  if (usingGenerated) {
+    if (local) local.hidden = false;
+    if (restore) restore.disabled = false;
+    if (status) {
+      status.textContent = `Local snapshot · seed ${DATA.meta.seed} · as-of ${DATA.meta.as_of_date} 15:12 HKT. Refresh keeps this copy on this browser only. 重新整理會保留本機快照，不會更新已發布網站。`;
+    }
+  } else {
+    if (local) local.hidden = true;
+    if (restore) restore.disabled = true;
+    if (status) {
+      status.textContent = "Published snapshot (seed 4542). Generate a new feed to walk prices and news forward one mock session. 已發布快照；按按鈕可產生下一個模擬交易日。";
+    }
+  }
+}
+
+function applyBundle(bundle, generated) {
+  DATA.meta = bundle.meta;
+  DATA.quotes = bundle.quotes;
+  DATA.news = bundle.news;
+  DATA.ohlc = bundle.ohlc;
+  DATA.ma50 = bundle.ma50;
+  usingGenerated = !!generated;
+  updateChrome();
+  renderAll();
+}
+
+function generateNewFeed() {
+  const seed = newFeedSeed();
+  const bundle = buildGeneratedFeed(DATA, seed);
+  try { saveStoredFeed(bundle); }
+  catch (err) { console.warn("Could not store the generated feed in this browser.", err); }
+  applyBundle(bundle, true);
+}
+
+function restorePublishedFeed() {
+  clearStoredFeed();
+  applyBundle({
+    meta: PUBLISHED.meta,
+    quotes: PUBLISHED.quotes,
+    news: PUBLISHED.news,
+    ohlc: PUBLISHED.ohlc,
+    ma50: PUBLISHED.ma50,
+  }, false);
+}
+
 async function boot() {
   const entries = await Promise.all(Object.entries(files).map(async ([k, path]) => {
     const res = await fetch(path);
@@ -340,16 +407,21 @@ async function boot() {
     return [k, await res.json()];
   }));
   entries.forEach(([k, v]) => { DATA[k] = v; });
-  $("asof-badge").textContent = `as-of ${DATA.meta.as_of_date} 15:12 HKT`;
+  ["meta", "quotes", "news", "ohlc", "ma50"].forEach((k) => {
+    PUBLISHED[k] = JSON.parse(JSON.stringify(DATA[k]));
+  });
   fillSelects();
   const short = DATA.watchlists.find((w) => w.id === "demo_short");
   if (short) $("watch-select").value = "demo_short";
-  renderWatch();
-  renderQuote();
-  renderNews();
-  renderIis();
-  renderProfile();
-  renderLater();
+  const stored = loadStoredFeed();
+  if (stored) applyBundle(stored, true);
+  else {
+    usingGenerated = false;
+    updateChrome();
+    renderAll();
+  }
+  $("btn-generate").addEventListener("click", generateNewFeed);
+  $("btn-restore").addEventListener("click", restorePublishedFeed);
 }
 
 document.getElementById("nav").addEventListener("click", (e) => {

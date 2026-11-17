@@ -140,6 +140,19 @@
     .sent-neg { background: #F3E2E4; color: var(--down); }
     .sent-neu { background: #EEEDE8; color: var(--muted); }
     h2.sub { font-size: 16px; margin: 22px 0 10px; }
+    .feed-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 12px; }
+    .feed-actions button {
+      font: inherit;
+      font-size: 13px;
+      padding: 7px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .feed-actions button.primary { background: var(--gold); color: #1A1A1A; border: 0; font-weight: 700; }
+    .feed-actions button.secondary { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.45); }
+    .feed-actions button:disabled { opacity: .45; cursor: not-allowed; }
+    #feed-status { color: #D7DCE6; font-size: 12px; }
+    .badge.local { background: #3D4F2F; }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
@@ -154,6 +167,12 @@
       <span class="badge outline">Not investment advice · 並非投資建議</span>
       <span class="badge outline" id="asof-badge">as-of …</span>
       <span class="badge gold">Later phase samples · 後期階段樣本</span>
+      <span class="badge local" id="local-badge" hidden>Generated in this browser · 本機產生</span>
+    </div>
+    <div class="feed-actions">
+      <button type="button" class="primary" id="btn-generate">Generate new feed · 產生新饋送</button>
+      <button type="button" class="secondary" id="btn-restore" disabled>Restore published snapshot · 還原已發布快照</button>
+      <span id="feed-status">The published snapshot stays fixed unless you generate a new one here. 已發布快照不會因重新整理而更新。</span>
     </div>
   </header>
   <nav id="nav">
@@ -250,6 +269,7 @@
   <footer>
     Synthetic educational data only (<code>is_mock=true</code>). Prices are 15-minute delayed teaching figures, not real-time HKEx OMDC. Text is original mock copy, not scraped from Quamnet, Infocast, AA Stocks, Bloomberg or HKEx. This page is not a Quam, Quamnet or Hong Kong Exchanges product. Columnist articles, AA Stocks-style news and social-media posts appear only as later-phase samples and are not in the passing scope. Figures such as PE, PB and EPS are stylised for class use. History here is about two years, not 25.
   </footer>
+  <script src="generate_feed.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
