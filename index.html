@@ -134,6 +134,12 @@
     @media (max-width: 800px) { .split { grid-template-columns: 1fr; } }
     .cite { font-size: 12px; color: var(--muted); margin-top: 6px; }
     .empty { color: var(--muted); padding: 20px 0; }
+    .later-banner { border-left: 4px solid var(--gold); background: #FFF8E8; }
+    .later-banner h2 { margin: 0 0 6px; font-size: 18px; }
+    .sent-pos { background: #DCEFE6; color: var(--up); }
+    .sent-neg { background: #F3E2E4; color: var(--down); }
+    .sent-neu { background: #EEEDE8; color: var(--muted); }
+    h2.sub { font-size: 16px; margin: 22px 0 10px; }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
@@ -147,6 +153,7 @@
       <span class="badge gold">延時 15 分鐘</span>
       <span class="badge outline">Not investment advice · 並非投資建議</span>
       <span class="badge outline" id="asof-badge">as-of …</span>
+      <span class="badge gold">Later phase samples · 後期階段樣本</span>
     </div>
   </header>
   <nav id="nav">
@@ -156,6 +163,7 @@
     <button data-panel="iis">IIS · 披露易</button>
     <button data-panel="profiles">Profiles · 公司資料</button>
     <button data-panel="search">RAG search · 檢索</button>
+    <button data-panel="later">Later phase · 後期階段</button>
   </nav>
   <main>
     <section id="watchlist" class="panel active">
@@ -219,12 +227,28 @@
         <input type="search" id="rag-q" placeholder="Ask or search the mock news and filings · 搜尋模擬新聞及公告" style="min-width:min(100%,420px)" />
         <button id="rag-go" style="padding:8px 14px;border:0;border-radius:6px;background:var(--navy);color:#fff;cursor:pointer;font:inherit;">Search</button>
       </div>
-      <p class="meta">Client-side keyword search over the mock news, IIS headlines and profiles, with source citations. This is not a live model and not investment advice.</p>
+      <p class="meta">Client-side keyword search over the mock news, IIS headlines, profiles, and later-phase samples, with source citations. Later-phase hits are labelled and are not in the passing scope. This is not a live model and not investment advice.</p>
       <div id="rag-out"></div>
+    </section>
+
+    <section id="later" class="panel">
+      <div class="card later-banner">
+        <h2>Later phase · 後期階段（不在及格範圍）</h2>
+        <p style="margin:0">These sources are for a later phase. They are not in the Semester B passing scope. Columnist pieces would still need agreement with the columnists; AA Stocks would depend on a student-side source; social media was not committed as a present feed. Every item below is original mock teaching text (<code>is_mock=true</code>, <code>in_passing_scope=false</code>), not real vendor copy or real user posts.</p>
+        <p style="margin:8px 0 0">以下來源屬後期階段，不納入本學期及格範圍。專欄須先與專欄作者商討；AA Stocks 可能由學生自行取得；社交媒體並未承諾作為現階段饋送。全部為原創模擬教學文本，並非真實供應商稿件或真實用戶發言。</p>
+      </div>
+      <h2 class="sub">Columnist articles · 專欄文章</h2>
+      <div id="later-columnist"></div>
+      <h2 class="sub">Q&amp;A mailbox · 問答信箱</h2>
+      <div id="later-qa"></div>
+      <h2 class="sub">AA Stocks-style news · 模擬 AA Stocks 風格快訊</h2>
+      <div id="later-aa"></div>
+      <h2 class="sub">Social media · 社交媒體情緒樣本</h2>
+      <div id="later-social"></div>
     </section>
   </main>
   <footer>
-    Synthetic educational data only (<code>is_mock=true</code>). Prices are 15-minute delayed teaching figures, not real-time HKEx OMDC. Text is original mock copy, not scraped from Quamnet, Infocast, AA Stocks, Bloomberg or HKEx. This page is not a Quam, Quamnet or Hong Kong Exchanges product. Figures such as PE, PB and EPS are stylised for class use. History here is about two years, not 25.
+    Synthetic educational data only (<code>is_mock=true</code>). Prices are 15-minute delayed teaching figures, not real-time HKEx OMDC. Text is original mock copy, not scraped from Quamnet, Infocast, AA Stocks, Bloomberg or HKEx. This page is not a Quam, Quamnet or Hong Kong Exchanges product. Columnist articles, AA Stocks-style news and social-media posts appear only as later-phase samples and are not in the passing scope. Figures such as PE, PB and EPS are stylised for class use. History here is about two years, not 25.
   </footer>
   <script src="app.js"></script>
 </body>

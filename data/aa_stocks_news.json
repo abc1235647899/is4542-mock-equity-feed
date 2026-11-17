@@ -1,0 +1,54 @@
+[
+  {
+    "id": "AAS-20261111-001",
+    "source_type": "aa_stocks",
+    "source_label": "模擬 AA Stocks 風格快訊",
+    "headline": "【後期階段·模擬】科技股午後偏軟 騰訊阿里同步調整",
+    "body": "【教學模擬快訊，並非 AA Stocks 真實稿件，亦非投資建議】本則只供課堂練習「後期階段」來源：與匯港通訊可能出現重疊，新聞代理應按代碼拆條、去重及排序，並標示來源類型。模擬內容：午後科技股偏軟，騰訊(00700)、阿里巴巴(09988)跟隨外圍回吐，未見必須公布的公司公告。in_passing_scope=false；later_phase=true；is_mock=true。",
+    "language": "zh-Hant",
+    "published_at": "2026-11-11T14:22:00+08:00",
+    "mentioned_tickers": "[\"00700\", \"09988\"]",
+    "in_passing_scope": 0,
+    "later_phase": 1,
+    "is_mock": 1
+  },
+  {
+    "id": "AAS-20261112-002",
+    "source_type": "aa_stocks",
+    "source_label": "模擬 AA Stocks 風格快訊",
+    "headline": "【後期階段·模擬】匯豐相對抗跌 資金在金融與科技之間輪動",
+    "body": "【教學模擬快訊，並非 AA Stocks 真實稿件，亦非投資建議】模擬觀察：匯豐(00005)及恒生銀行(00011)跌幅小於科技股，只說明當日資金偏好，不能推論後市。若同時讀到匯港通訊類似表述，應保留兩則來源並在摘要中分別引用，而不是刪去其一後當成單一事實。in_passing_scope=false；later_phase=true；is_mock=true。",
+    "language": "zh-Hant",
+    "published_at": "2026-11-12T10:08:00+08:00",
+    "mentioned_tickers": "[\"00005\", \"00011\"]",
+    "in_passing_scope": 0,
+    "later_phase": 1,
+    "is_mock": 1
+  },
+  {
+    "id": "AAS-20261113-003",
+    "source_type": "aa_stocks",
+    "source_label": "模擬 AA Stocks 風格快訊",
+    "headline": "【後期階段·模擬】港交所及友邦保險見於個別投資者討論 仍待課程確認是否納入",
+    "body": "【教學模擬快訊，並非 AA Stocks 真實稿件，亦非投資建議】本課程初階段及格範圍並不包括 AA Stocks。此則放在後期階段樣本庫，方便同學預先設計來源開關：預設關閉，待雙方確認授權後才納入檢索。提及港交所(00388)與友邦保險(01299)只作代碼練習。in_passing_scope=false；later_phase=true；is_mock=true。",
+    "language": "zh-Hant",
+    "published_at": "2026-11-13T09:35:00+08:00",
+    "mentioned_tickers": "[\"00388\", \"01299\"]",
+    "in_passing_scope": 0,
+    "later_phase": 1,
+    "is_mock": 1
+  },
+  {
+    "id": "AAS-20261113-004",
+    "source_type": "aa_stocks",
+    "source_label": "模擬 AA Stocks 風格快訊",
+    "headline": "【後期階段·模擬】小米與中芯見於重疊來源 應用於去重練習",
+    "body": "【教學模擬快訊，並非 AA Stocks 真實稿件，亦非投資建議】模擬重疊：小米集團(01810)與中芯國際(00981)亦可能出現在匯港通訊。正確做法是比較標題、時間與正文，把重疊權重提高而不是重複摘要兩次。本則不是真實市場消息。in_passing_scope=false；later_phase=true；is_mock=true。",
+    "language": "zh-Hant",
+    "published_at": "2026-11-13T11:18:00+08:00",
+    "mentioned_tickers": "[\"01810\", \"00981\"]",
+    "in_passing_scope": 0,
+    "later_phase": 1,
+    "is_mock": 1
+  }
+]

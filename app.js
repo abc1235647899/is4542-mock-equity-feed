@@ -11,6 +11,10 @@ const files = {
   iis: "data/iis_announcements.json",
   ohlc: "data/ohlc_daily_tail.json",
   ma50: "data/ma50_latest.json",
+  columnist: "data/columnist_articles.json",
+  qa: "data/qa_mailbox.json",
+  aaStocks: "data/aa_stocks_news.json",
+  social: "data/social_media_posts.json",
 };
 
 function fmt(n, d = 2) {
@@ -36,10 +40,21 @@ function cls(n) {
   return v > 0 ? "up" : v < 0 ? "down" : "";
 }
 function tickersOf(item) {
-  const raw = item.mentioned_tickers;
+  const raw = item.mentioned_tickers || item.related_tickers;
   if (!raw) return [];
   if (Array.isArray(raw)) return raw;
   try { return JSON.parse(raw); } catch { return []; }
+}
+function laterBadge() {
+  return `<span class="tag warn">Later phase · 後期階段</span><span class="tag out">Not in passing scope · 不在及格範圍</span>`;
+}
+function whenOf(s) {
+  return (s || "").replace("T", " ").replace("+08:00", " HKT");
+}
+function sentClass(s) {
+  if (s === "positive") return "sent-pos";
+  if (s === "negative") return "sent-neg";
+  return "sent-neu";
 }
 function byTicker(ticker) {
   return DATA.quotes.find((q) => q.ticker === ticker);
@@ -240,6 +255,41 @@ function renderProfile() {
   `;
 }
 
+function renderLater() {
+  const ticks = (item) => tickersOf(item).map((t) => `<span class="tag">${t}</span>`).join("");
+  $("later-columnist").innerHTML = (DATA.columnist || []).map((a) => `
+    <article class="news-item card">
+      <div class="meta">${whenOf(a.published_at)} · ${a.id} · ${a.author || ""} · ${a.column_name || ""}</div>
+      <h3>${a.title}</h3>
+      <div>${laterBadge()}${ticks(a)}</div>
+      <p>${(a.body || "").replace(/</g, "&lt;")}</p>
+    </article>
+  `).join("") || `<p class="empty">No columnist samples.</p>`;
+  $("later-qa").innerHTML = (DATA.qa || []).map((a) => `
+    <article class="news-item card">
+      <div class="meta">${whenOf(a.published_at)} · ${a.id} · ${a.column_name || ""} ${a.question_id || ""}</div>
+      <div>${laterBadge()}${ticks(a)}</div>
+      <p><strong>Q.</strong> ${(a.question || "").replace(/</g, "&lt;")}</p>
+      <p><strong>A.</strong> ${(a.answer || "").replace(/</g, "&lt;")}</p>
+    </article>
+  `).join("") || `<p class="empty">No Q&amp;A samples.</p>`;
+  $("later-aa").innerHTML = (DATA.aaStocks || []).map((a) => `
+    <article class="news-item card">
+      <div class="meta">${whenOf(a.published_at)} · ${a.id} · ${a.source_label || "AA Stocks-style"}</div>
+      <h3>${a.headline}</h3>
+      <div>${laterBadge()}${ticks(a)}</div>
+      <p>${(a.body || "").replace(/</g, "&lt;")}</p>
+    </article>
+  `).join("") || `<p class="empty">No AA Stocks-style samples.</p>`;
+  $("later-social").innerHTML = (DATA.social || []).map((a) => `
+    <article class="news-item card">
+      <div class="meta">${whenOf(a.posted_at)} · ${a.id} · ${a.platform || ""} · ${a.author_handle || ""}</div>
+      <div>${laterBadge()}<span class="tag ${sentClass(a.sentiment)}">${a.sentiment_zh || a.sentiment || ""}</span>${ticks(a)}</div>
+      <p>${(a.text || "").replace(/</g, "&lt;")}</p>
+    </article>
+  `).join("") || `<p class="empty">No social samples.</p>`;
+}
+
 function searchRag() {
   const q = ($("rag-q").value || "").trim().toLowerCase();
   const out = $("rag-out");
@@ -255,11 +305,27 @@ function searchRag() {
   });
   DATA.profiles.forEach((p) => {
     const blob = `${p.name_zh} ${p.name_en} ${p.ticker} ${p.principal_activities} ${p.latest_results_text} ${p.business_review_text}`.toLowerCase();
-    if (blob.includes(q)) hits.push({ kind: "Profile · 公司資料", title: `${p.ticker} ${p.name_zh}`, src: `profile · ${p.ticker}`, body: p.principal_activities, id: "P-" + p.ticker });
+    if (blob.includes(q)) hits.push({ kind: "Profile · 公司資料", title: `${p.ticker} ${p.name_zh}`, src: `profile · ${p.ticker}`, body: p.principal_activities, id: "P-" + p.ticker, later: false });
+  });
+  (DATA.columnist || []).forEach((a) => {
+    const blob = `${a.title} ${a.body} ${tickersOf(a).join(" ")}`.toLowerCase();
+    if (blob.includes(q)) hits.push({ kind: "Later phase · 專欄", title: a.title, src: `${a.id} · ${a.published_at || ""}`, body: a.body, id: a.id, later: true });
+  });
+  (DATA.qa || []).forEach((a) => {
+    const blob = `${a.question} ${a.answer} ${tickersOf(a).join(" ")} ${a.question_id || ""}`.toLowerCase();
+    if (blob.includes(q)) hits.push({ kind: "Later phase · 問答信箱", title: `${a.column_name || "Q&A"} ${a.question_id || a.id}`, src: `${a.id} · ${a.published_at || ""}`, body: `Q: ${a.question} A: ${a.answer}`, id: a.id, later: true });
+  });
+  (DATA.aaStocks || []).forEach((a) => {
+    const blob = `${a.headline} ${a.body} ${tickersOf(a).join(" ")}`.toLowerCase();
+    if (blob.includes(q)) hits.push({ kind: "Later phase · AA Stocks-style", title: a.headline, src: `${a.id} · ${a.published_at || ""}`, body: a.body, id: a.id, later: true });
+  });
+  (DATA.social || []).forEach((a) => {
+    const blob = `${a.text} ${a.platform} ${a.author_handle} ${tickersOf(a).join(" ")}`.toLowerCase();
+    if (blob.includes(q)) hits.push({ kind: "Later phase · 社交媒體", title: `${a.platform} ${a.author_handle}`, src: `${a.id} · ${a.posted_at || ""}`, body: a.text, id: a.id, later: true });
   });
   out.innerHTML = `<p class="meta">${hits.length} cited sources</p>` + (hits.slice(0, 30).map((h) => `
     <article class="card">
-      <span class="tag">${h.kind}</span>
+      <span class="tag">${h.kind}</span>${h.later ? laterBadge() : ""}
       <h3 style="margin:6px 0 4px">${h.title}</h3>
       ${h.body ? `<p>${h.body.slice(0, 280)}${h.body.length > 280 ? "…" : ""}</p>` : ""}
       <div class="cite">Source: ${h.src}</div>
@@ -283,6 +349,7 @@ async function boot() {
   renderNews();
   renderIis();
   renderProfile();
+  renderLater();
 }
 
 document.getElementById("nav").addEventListener("click", (e) => {

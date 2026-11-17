@@ -18,8 +18,10 @@
   "watchlist_members_demo_short": 3,
   "ma50": 9768,
   "corporate_actions": 6,
-  "documents": 685,
+  "documents": 695,
   "replay_events": 20,
   "indices": 6,
-  "db_path": "/workspace/is4542-mock-equity-feed/data/is4542_mock_equity.db"
+  "db_path": "/workspace/is4542-mock-equity-feed/data/is4542_mock_equity.db",
+  "aa_stocks_news": 4,
+  "social_media_posts": 6
 }
