@@ -381,12 +381,30 @@ function applyBundle(bundle, generated) {
   renderAll();
 }
 
+function showFeedError(err) {
+  const status = $("feed-status");
+  const msg = (err && err.message) ? err.message : String(err);
+  if (status) status.textContent = "Could not generate a new feed: " + msg;
+  console.error(err);
+}
+
 function generateNewFeed() {
-  const seed = newFeedSeed();
-  const bundle = buildGeneratedFeed(DATA, seed);
-  try { saveStoredFeed(bundle); }
-  catch (err) { console.warn("Could not store the generated feed in this browser.", err); }
-  applyBundle(bundle, true);
+  const status = $("feed-status");
+  if (!window.__feedReady || !DATA.quotes) {
+    if (status) status.textContent = "Still loading the published snapshot. Try again in a moment.";
+    return;
+  }
+  try {
+    if (status) status.textContent = "Generating a new mock session…";
+    const seed = newFeedSeed();
+    const bundle = buildGeneratedFeed(DATA, seed);
+    try { saveStoredFeed(bundle); }
+    catch (err) { console.warn("Could not store the generated feed in this browser.", err); }
+    applyBundle(bundle, true);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  } catch (err) {
+    showFeedError(err);
+  }
 }
 
 function restorePublishedFeed() {
@@ -420,8 +438,7 @@ async function boot() {
     updateChrome();
     renderAll();
   }
-  $("btn-generate").addEventListener("click", generateNewFeed);
-  $("btn-restore").addEventListener("click", restorePublishedFeed);
+  window.__feedReady = true;
 }
 
 document.getElementById("nav").addEventListener("click", (e) => {
@@ -435,7 +452,11 @@ $("iis-select").addEventListener("change", renderIis);
 $("profile-select").addEventListener("change", renderProfile);
 $("rag-go").addEventListener("click", searchRag);
 $("rag-q").addEventListener("keydown", (e) => { if (e.key === "Enter") searchRag(); });
+$("btn-generate").addEventListener("click", generateNewFeed);
+$("btn-restore").addEventListener("click", restorePublishedFeed);
 
 boot().catch((err) => {
   document.querySelector("main").insertAdjacentHTML("afterbegin", `<p class="card" style="color:#7A1F2B">${err.message}</p>`);
+  const status = $("feed-status");
+  if (status) status.textContent = "The page failed to finish loading: " + err.message;
 });
